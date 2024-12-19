@@ -17,6 +17,7 @@
 # define FLAGS "-0#+ "
 # include "ft_list.h"
 # include "libft.h"
+
 typedef struct s_specifier
 {
 	char	conversion;
