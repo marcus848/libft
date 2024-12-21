@@ -15,12 +15,7 @@
 
 # define SPECIFIERS "cspdiuxX%"
 # define FLAGS "-0#+ "
-<<<<<<< HEAD
-# include "ft_list.h"
-# include "libft.h"
-=======
 # include "libc.h"
->>>>>>> 27a4516030b68e74705baa347792d328fcee9639
 
 typedef struct s_specifier
 {

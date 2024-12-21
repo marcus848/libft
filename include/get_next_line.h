@@ -17,14 +17,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-<<<<<<< HEAD
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
-=======
 # include "libs.h"
->>>>>>> 27a4516030b68e74705baa347792d328fcee9639
 # include "ft_string.h"
 # include "ft_memory.h"
 
