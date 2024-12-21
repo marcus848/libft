@@ -1,15 +1,15 @@
-# Nome do arquivo final
+# File name
 NAME = libft.a
 
-# Compilador e flags
+# flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-# Diretórios
-SRC_DIR = srcs
-OBJ_DIR = objs
+# Dirs
+SRC_DIR = src
+OBJ_DIR = obj
 
-# Submódulos
+# Submodules
 CHAR_DIR = $(SRC_DIR)/char
 IO_DIR = $(SRC_DIR)/io
 STRING_DIR = $(SRC_DIR)/string
@@ -18,7 +18,7 @@ MEMORY_DIR = $(SRC_DIR)/memory
 PRINTF_DIR = $(SRC_DIR)/ft_printf
 GNL_DIR = $(SRC_DIR)/gnl
 
-# Arquivos fonte
+# Files
 SRCS = \
 	$(CHAR_DIR)/ft_isalnum.c \
 	$(CHAR_DIR)/ft_isalpha.c \
@@ -77,10 +77,10 @@ SRCS = \
 	$(PRINTF_DIR)/printf_s_c_percent.c \
 	$(GNL_DIR)/get_next_line.c
 
-# Arquivos objeto
+# Objects
 OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Regras principais
+# Main rules
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -101,6 +101,4 @@ fclean: clean
 
 re: fclean all
 
-# Indicação de que as regras não são arquivos reais
 .PHONY: all clean fclean re
-

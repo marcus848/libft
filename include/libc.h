@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   libc.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 19:18:15 by marcudos          #+#    #+#             */
-/*   Updated: 2024/12/20 14:51:07 by marcudos         ###   ########.fr       */
+/*   Created: 2024/12/20 14:24:03 by marcudos          #+#    #+#             */
+/*   Updated: 2024/12/20 14:49:09 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef LIBC_H
+# define LIBC_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-<<<<<<< HEAD
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <fcntl.h>
-=======
 # include "libs.h"
->>>>>>> 27a4516030b68e74705baa347792d328fcee9639
-# include "ft_string.h"
+# include "ft_char.h"
+# include "ft_io.h"
+# include "ft_list.h"
 # include "ft_memory.h"
-
-char	*get_next_line(int fd);
-char	*find_next_line(char *line);
-char	*find_current_line(char *line);
-char	*get_full_line(int fd, char *line);
+# include "ft_string.h"
 
 #endif

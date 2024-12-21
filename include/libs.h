@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 19:18:15 by marcudos          #+#    #+#             */
-/*   Updated: 2024/12/20 14:51:07 by marcudos         ###   ########.fr       */
+/*   Created: 2024/12/20 14:47:53 by marcudos          #+#    #+#             */
+/*   Updated: 2024/12/20 14:53:58 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef LIBS_H
+# define LIBS_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-<<<<<<< HEAD
 # include <unistd.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-=======
-# include "libs.h"
->>>>>>> 27a4516030b68e74705baa347792d328fcee9639
-# include "ft_string.h"
-# include "ft_memory.h"
-
-char	*get_next_line(int fd);
-char	*find_next_line(char *line);
-char	*find_current_line(char *line);
-char	*get_full_line(int fd, char *line);
 
 #endif
