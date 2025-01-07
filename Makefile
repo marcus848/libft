@@ -18,6 +18,16 @@ MEMORY_DIR = $(SRC_DIR)/memory
 PRINTF_DIR = $(SRC_DIR)/ft_printf
 GNL_DIR = $(SRC_DIR)/gnl
 
+# Colors
+RESET   = \033[0m
+RED     = \033[31m
+GREEN   = \033[32m
+YELLOW  = \033[33m
+BLUE    = \033[34m
+MAGENTA = \033[35m
+CYAN    = \033[36m
+WHITE   = \033[37m
+
 # Files
 SRCS = \
 	$(CHAR_DIR)/ft_isalnum.c \
@@ -83,21 +93,24 @@ OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 # Main rules
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): compile_objs $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(NAME) criado com sucesso."
+	@echo "$(GREEN)$(NAME) criado com sucesso.$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+compile_objs:
+	@echo "$(YELLOW)Compilando objetos...$(RESET)"
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "Objetos removidos."
+	@echo "$(CYAN)Objetos removidos.$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) removido."
+	@echo "$(CYAN)$(NAME) removido.$(RESET)"
 
 re: fclean all
 
