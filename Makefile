@@ -93,16 +93,13 @@ OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 # Main rules
 all: $(NAME)
 
-$(NAME): compile_objs $(OBJS)
+$(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "$(GREEN)$(NAME) criado com sucesso.$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) -c $< -o $@
-
-compile_objs:
-	@echo "$(YELLOW)Compilando objetos...$(RESET)"
 
 clean:
 	@rm -rf $(OBJ_DIR)
