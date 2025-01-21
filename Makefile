@@ -75,6 +75,7 @@ SRCS = \
 	$(STRING_DIR)/ft_strrchr.c \
 	$(STRING_DIR)/ft_strtrim.c \
 	$(STRING_DIR)/ft_substr.c \
+	$(STRING_DIR)/ft_count_words.c \
 	$(PRINTF_DIR)/ft_printf.c \
 	$(PRINTF_DIR)/parse_format.c \
 	$(PRINTF_DIR)/parse_utils.c \
