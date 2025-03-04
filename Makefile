@@ -18,6 +18,16 @@ MEMORY_DIR = $(SRC_DIR)/memory
 PRINTF_DIR = $(SRC_DIR)/ft_printf
 GNL_DIR = $(SRC_DIR)/gnl
 
+# Colors
+RESET   = \033[0m
+RED     = \033[31m
+GREEN   = \033[32m
+YELLOW  = \033[33m
+BLUE    = \033[34m
+MAGENTA = \033[35m
+CYAN    = \033[36m
+WHITE   = \033[37m
+
 # Files
 SRCS = \
 	$(CHAR_DIR)/ft_isalnum.c \
@@ -48,7 +58,9 @@ SRCS = \
 	$(MEMORY_DIR)/ft_memcpy.c \
 	$(MEMORY_DIR)/ft_memmove.c \
 	$(MEMORY_DIR)/ft_memset.c \
+	$(MEMORY_DIR)/ft_realloc.c \
 	$(STRING_DIR)/ft_atoi.c \
+	$(STRING_DIR)/ft_atoi_base.c \
 	$(STRING_DIR)/ft_itoa.c \
 	$(STRING_DIR)/ft_split.c \
 	$(STRING_DIR)/ft_strchr.c \
@@ -64,6 +76,7 @@ SRCS = \
 	$(STRING_DIR)/ft_strrchr.c \
 	$(STRING_DIR)/ft_strtrim.c \
 	$(STRING_DIR)/ft_substr.c \
+	$(STRING_DIR)/ft_count_words.c \
 	$(PRINTF_DIR)/ft_printf.c \
 	$(PRINTF_DIR)/parse_format.c \
 	$(PRINTF_DIR)/parse_utils.c \
@@ -85,19 +98,19 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(NAME) criado com sucesso."
+	@echo "$(GREEN)$(NAME) criado com sucesso.$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "Objetos removidos."
+	@echo "$(CYAN)Objetos removidos.$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) removido."
+	@echo "$(CYAN)$(NAME) removido.$(RESET)"
 
 re: fclean all
 

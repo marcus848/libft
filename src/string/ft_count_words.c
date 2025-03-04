@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcudos <marcudos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 19:47:55 by marcudos          #+#    #+#             */
-/*   Updated: 2024/12/20 14:53:17 by marcudos         ###   ########.fr       */
+/*   Created: 2025/01/21 13:14:08 by marcudos          #+#    #+#             */
+/*   Updated: 2025/01/21 13:18:47 by marcudos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *lnew)
+int	ft_count_words(const char *str)
 {
-	lnew->next = *lst;
-	*lst = lnew;
+	int	count;
+	int	in_word;
+
+	count = 0;
+	in_word = 0;
+	while (*str)
+	{
+		if (*str == ' ' || *str == '\t' || *str == '\n')
+			in_word = 0;
+		else if (!in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		str++;
+	}
+	return (count);
 }
