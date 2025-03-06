@@ -33,6 +33,7 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
 int		ft_atoi_base(char *str, int base);
+long	ft_atol(const char *nptr);
 int		ft_count_words(const char *str);
 
 #endif // !FT_STRING_H
